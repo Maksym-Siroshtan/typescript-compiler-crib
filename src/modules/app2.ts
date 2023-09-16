@@ -1,8 +1,14 @@
-export namespace A {
-  // Грубо говоря, обёртка которая инкапсулирует в себе какую-то логику
-  export const a = 5;
+export const a = 5; // Экспорт по имени
 
-  export interface B {
-    c: number;
-  }
+export const obj = {}; // Экспорт по имени
+
+export class Test {} // Экспорт по имени
+
+export default function run() {
+  // Экспорт по умолчанию
+  console.log("run");
 }
+
+export type StrOrNum = string | number; // Экспорт типа
+
+// export default type StrOrNum = string | number; Error - типы невозможно экспортировать по умолчанию
