@@ -105,6 +105,19 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  },
+  }
   // "files": ["app.ts"] // Выбрать файл который будет скомпилирован командой tsc
+  // "include": [
+  // Включить наборы файлов для компиляции
+  // Тоже самое что и files, только позволяет использовать паттерны
+  // "app*"
+  // "my_folder/**/app*",
+  // "/**/app*"
+  // ],
+  // "exclude": [
+  // Исключить те файлы которые не нужно компилировать
+  // "app.ts"
+  // ],
+  // "extends":"./"
+  //  Путь до TS конфига которий наследует другой конфиг
 }
