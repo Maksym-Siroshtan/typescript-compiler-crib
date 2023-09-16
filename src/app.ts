@@ -1,12 +1,15 @@
-// import run, {a, Test as Cl, type StrOrNum} from "./modules/app2"; Смешанный импорт
-import { a as number } from "./modules/app2"; // Импорт по имени
-import running from "./modules/app2"; // Импорт по умолчанию
-import { type StrOrNum } from "./modules/app2"; // Импорт типа
+import "really-relaxed-json";
 
-running();
+// Не удалось найти файл объявления модуля "really-relaxed-json".
+// Первое решение проблемы(не очень хорошее, проигнорировать следующую строку)
+////@ts-ignore
+// import { toJson } from "really-relaxed-json";
+// const rjson = "[ one two three {foo:bar} ]";
+// const json = toJson(rjson);
+// console.log(json); // Working...
 
-function log(value: StrOrNum) {
-  console.log(value);
-}
-
-log(number);
+// Второе решение(хорошее) типизировать библиотеку самому
+import { toJson } from "really-relaxed-json";
+const rjson = "[ one two three {foo:bar} ]";
+const json = toJson(rjson);
+console.log(json); // Working

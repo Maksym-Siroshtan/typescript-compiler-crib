@@ -1,13 +1,15 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-// import run, {a, Test as Cl, type StrOrNum} from "./modules/app2"; Смешанный импорт
-const app2_1 = require("./modules/app2"); // Импорт по имени
-const app2_2 = __importDefault(require("./modules/app2")); // Импорт по умолчанию
-(0, app2_2.default)();
-function log(value) {
-    console.log(value);
-}
-log(app2_1.a);
+require("really-relaxed-json");
+// Не удалось найти файл объявления модуля "really-relaxed-json".
+// Первое решение проблемы(не очень хорошее, проигнорировать следующую строку)
+////@ts-ignore
+// import { toJson } from "really-relaxed-json";
+// const rjson = "[ one two three {foo:bar} ]";
+// const json = toJson(rjson);
+// console.log(json); // Working...
+// Второе решение(хорошее) типизировать библиотеку самому
+const really_relaxed_json_1 = require("really-relaxed-json");
+const rjson = "[ one two three {foo:bar} ]";
+const json = (0, really_relaxed_json_1.toJson)(rjson);
+console.log(json); // Working
